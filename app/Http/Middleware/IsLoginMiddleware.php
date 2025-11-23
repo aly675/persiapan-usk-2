@@ -17,7 +17,7 @@ class IsLoginMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth::check()){
-            return redirect()->route('');
+            return redirect()->route('siswa.dashboard-siswa-page');
         }
         return $next($request);
     }
