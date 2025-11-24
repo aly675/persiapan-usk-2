@@ -33,3 +33,5 @@ Route::prefix('admin')->middleware('guru')->group( function() {
         Route::get('input-absensi', [AbsensiController::class, 'input_absensi_page'])->name('absensi.input-absensi-page');
     });
 });
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

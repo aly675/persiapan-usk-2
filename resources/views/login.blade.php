@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SMKN 12 | </title>
+    <title>SMKN 12 | Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
       .left-column{
@@ -57,19 +57,21 @@
               <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
 
+            @if(session('succes'))
+              <div class="alert alert-success">{{ session('succes') }}</div>
+            @endif
+
             <form method="POST" action="{{ route('login') }}">
               @csrf
 
               <div class="mb-3">
                 <label for="nip" class="form-label">NIP</label>
                 <input id="nip" name="nip" value="{{ old('nip') }}" type="text" class="form-control @error('nip') is-invalid @enderror" required autofocus>
-                @error('nip') <div class="invalid-feedback">{{ $message }}</div> @enderror
               </div>
 
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input id="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror" required>
-                @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
               </div>
 
               <div class="d-grid mb-3">

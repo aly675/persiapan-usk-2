@@ -24,10 +24,13 @@ class AuthController extends Controller
             return redirect()->route('siswa.dashboard-siswa-page')->with('succes', 'anda berhasil login');
         }
 
-        return redirect()->back()->with('error', 'Username atau password anda salah');
+        return redirect()->back()->with('error', 'Username atau password anda salah')->withInput();
     }
 
-    public function logout(){
+    public function logout(Request $request){
+        $request->session()->invalidate();
+        $request->session()->regenerate(true);
 
+        return redirect()->route('login-page')->with('succes', 'anda berhasil logout');
     }
 }
