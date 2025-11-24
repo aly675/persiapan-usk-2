@@ -31,7 +31,7 @@
                 <div class="mb-auto w-100">
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item mb-2">
-                            <a href="#" class="nav-link text-white">
+                            <a href="{{ route('guru.dashboard-guru-page') }}" class="nav-link text-white">
                                 Dashboard Guru
                             </a>
                         </li>
@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="#" class="nav-link text-white">
+                            <a href="{{ route('absensi.dashboard-absensi-page') }}" class="nav-link text-white">
                                 Data Absensi
                             </a>
                         </li>
@@ -60,7 +60,7 @@
 
             </nav>
 
-            <main class="col-10 bg-light p-4" style="height: 100vh; overflow-y: auto;">
+            <main class="col-10 bg-light p-0" style="height: 100vh; overflow-y: auto;">
                 @yield('main')
             </main>
 
